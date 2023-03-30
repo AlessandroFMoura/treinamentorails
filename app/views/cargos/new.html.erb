@@ -1,0 +1,19 @@
+<h1>Novo Cargo</h1>
+
+<%= form_with model: @cargo do |form| %>
+
+    <div>
+        <%= form.label :funcao %><br>
+        <%= form.text_field :funcao %>
+    <div>
+
+    <div>
+        <%= form.label :sigla %><br>
+        <%= form.text_field :sigla %>
+    <div>
+
+    <div class="actions">
+        <%= form.submit 'Salvar' %>
+        <%= link_to 'Voltar', cargos_path %>
+    </div>
+<% end %>
