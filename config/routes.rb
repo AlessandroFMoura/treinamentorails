@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_scope :admins do
+    get 'sign_in', to: 'devise/sessions#new'
+    get 'sign_out', to: 'devise/sessions#destroy'
+  end
   get 'users/index'
   get 'users/new'
   get 'users/create'

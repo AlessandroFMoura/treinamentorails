@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_funcao_options, only: [:new, :create, :edit, :update]
+  # before_action :authenticate_admin!#, :
+  # :admin_signed_in? 
+  # :current_admin 
+  # :admin_session 
+  # before_action protect_from_forgery prepend: true
+
 
   def index
     @users = User.all
@@ -24,8 +30,12 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to users_path
+    if @user != nil
+      if @user.save
+        redirect_to users_path
+      else
+        redirect_to new_user_path
+      end
     else
       render 'new'
     end
