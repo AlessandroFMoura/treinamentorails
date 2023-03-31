@@ -225,7 +225,11 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+<<<<<<< HEAD
   devise
+=======
+  devise (~> 4.9)
+>>>>>>> 6412d88c59e8685df41d390f417b72a79c69c847
   importmap-rails
   jbuilder
   puma (~> 5.0)
