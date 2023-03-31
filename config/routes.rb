@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  delete "admins/sgin_out", to: 'devise/sessions#destroy' 
   get 'users/index'
   get 'users/new'
   get 'users/create'
