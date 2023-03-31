@@ -1,15 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_funcao_options, only: [:new, :create, :edit, :update]
-<<<<<<< HEAD
   
-=======
-  # before_action :authenticate_admin!#, :
-  # :admin_signed_in? 
-  # :current_admin 
-  # :admin_session 
-  # before_action protect_from_forgery prepend: true
-
->>>>>>> 6412d88c59e8685df41d390f417b72a79c69c847
 
   def index
     @users = User.all
