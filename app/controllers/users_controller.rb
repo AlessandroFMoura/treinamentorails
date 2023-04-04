@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_funcao_options, only: [:new, :create, :edit, :update]
   
 

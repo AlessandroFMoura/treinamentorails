@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   devise_for :admins
   delete "admins/sgin_out", to: 'devise/sessions#destroy' 
   get 'users/index'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   get 'users/create'
   get 'users/show'
   get 'users/destroy'
-  root 'users#index'
+  root 'welcome#index'
   
   get 'user/index'
   resources :users

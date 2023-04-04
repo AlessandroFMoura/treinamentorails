@@ -1,5 +1,6 @@
 class CargosController < ApplicationController
-  layout "adm"
+  before_action :authenticate_admin!
+  # layout "adm"
   def index
     @cargos = Cargo.all
   end
