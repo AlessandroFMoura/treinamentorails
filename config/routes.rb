@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :profiles
-  get 'profiles/index'
+  get 'profiles', to: 'profiles#index' 
   get 'welcome/index'
   get 'alunos/new'
   get 'alunos/create'
