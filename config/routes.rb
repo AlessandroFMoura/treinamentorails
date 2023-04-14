@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :profiles
+  get 'profiles/index'
   get 'welcome/index'
-  devise_for :admins
-  delete "admins/sgin_out", to: 'devise/sessions#destroy' 
   get 'users/index'
   get 'users/new'
   get 'users/create'
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/destroy'
   root 'welcome#index'
   
+
   get 'user/index'
   resources :users
   

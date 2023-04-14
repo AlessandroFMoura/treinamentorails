@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_profile!  
   before_action :set_funcao_options, only: [:new, :create, :edit, :update]
   
-
   def index
     @users = User.all
+    
   end
 
   def new
