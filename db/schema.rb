@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_131750) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_14_170543) do
+  create_table "alunos", force: :cascade do |t|
+    t.string "aluno_name"
+    t.string "email"
+    t.string "matricula"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cargo_id"
+    t.index ["cargo_id"], name: "index_alunos_on_cargo_id"
+  end
+
   create_table "cargos", force: :cascade do |t|
     t.string "funcao"
     t.string "sigla"
@@ -30,15 +40,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_131750) do
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "user_name"
-    t.string "email"
-    t.string "matricula"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "cargo_id"
-    t.index ["cargo_id"], name: "index_users_on_cargo_id"
-  end
-
-  add_foreign_key "users", "cargos"
+  add_foreign_key "alunos", "cargos"
 end

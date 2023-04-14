@@ -1,0 +1,32 @@
+<%= form_with(model: aluno, local: true) do |form| %>
+  <% if aluno.errors.any? %>
+      <div id="error_explantion">
+        <h2><%= pluralize(aluno.errors.count, "error") %> prohibited this coin from being saved:</h2>
+      <ul>
+      <% aluno.aluno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>  
+      </ul>
+    </div>
+  <% end %>
+    <div>
+      <%= form.label :aluno_name %><br>
+      <%= form.text_field :aluno_name %>
+    </div>
+      <br>
+    <div>
+      <%= form.label :email %><br>
+      <%= form.email_field :email%>
+    </div>
+      <br>
+    <div>
+      <%= form.label :funcao %>:
+      <%= form.select("cargo_id", @funcao_options, { include_blank: 'Selecione...' }) %> 
+     <br>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Salvar' %>
+    </div>
+
+<% end %>

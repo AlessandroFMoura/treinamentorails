@@ -1,0 +1,9 @@
+<h1><%= @aluno.aluno_name %></h1>
+
+<p><strong>E-mail: </strong><%= @aluno.email %></p>
+<p><strong>Matricula: </strong><%= @aluno.matricula %></p>
+<p><strong>Função: </strong><%= @aluno.cargo.funcao %></p> 
+
+
+<%= link_to 'Voltar', alunos_path %>
+<%= link_to 'Editar', edit_aluno_path %>

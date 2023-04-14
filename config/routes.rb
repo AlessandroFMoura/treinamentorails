@@ -2,16 +2,14 @@ Rails.application.routes.draw do
   devise_for :profiles
   get 'profiles/index'
   get 'welcome/index'
-  get 'users/index'
-  get 'users/new'
-  get 'users/create'
-  get 'users/show'
-  get 'users/destroy'
+  get 'alunos/new'
+  get 'alunos/create'
+  get 'alunos/show'
+  get 'alunos/destroy'
   root 'welcome#index'
+  get 'alunos/index', to: 'alunos#index'
   
-
-  get 'user/index'
-  resources :users
+  resources :alunos
   
   get '/cargos', to: 'cargos#index'
   get 'cargos/show'
