@@ -6,6 +6,7 @@ class Profile < ApplicationRecord
 
 
   before_create :generate_matricula
+  # validates :profile_name, presence: true
    
   private
   def generate_matricula

@@ -4,7 +4,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[7.0]
   def change
     create_table :profiles do |t|
       ## Database authenticatable
-      t.string :name,               null: false, default: ""
+      t.string :progile_name,               null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :matricula,          null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -38,7 +38,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[7.0]
       t.timestamps null: false
     end
 
-    add_index :profiles, :name,                 unique: false
+    add_index :profiles, :profile_name,                 unique: false
     add_index :profiles, :email,                unique: true
     add_index :profiles, :matricula,            unique: true
     add_index :profiles, :reset_password_token, unique: true
